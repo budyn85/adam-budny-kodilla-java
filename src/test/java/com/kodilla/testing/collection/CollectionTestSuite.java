@@ -1,8 +1,7 @@
 package com.kodilla.testing.collection;
 import org.junit.*;
-import com.kodilla.testing.collection.OddNumbersExterminator;
+
 import java.util.ArrayList;
-import java.util.Random;
 
 public class CollectionTestSuite {
     @Before
@@ -23,27 +22,31 @@ public class CollectionTestSuite {
     }
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-        ArrayList<Integer> theList = new ArrayList<Integer>();
-        Random generator = new Random();
-        for (int n = 0; n < 100; n++) {
-            theList.add(generator.nextInt(50));
-        }
-        ;
-        int result = theList.size();
-        if (result == 0) {
-            System.out.println("Error");
+        OddNumbersExterminator emptyNumbers= new OddNumbersExterminator();
+        ArrayList<Integer> sizeCheck = new ArrayList<Integer>();
+        emptyNumbers.exterminate(sizeCheck);
+        if (sizeCheck.size()==0) {
+            System.out.println("List is empty");
         } else {
-            System.out.println("List contain:" + theList);
+            System.out.println("Error");
         }
     }
     @Test
     public void testOddNumbersExterminatorNormalList(){
-        ArrayList<Integer> theList = new ArrayList<Integer>();
-        Random generator = new Random();
-        for (int n=0; n<100; n++){
-            theList.add(generator.nextInt(50)); };
-        int result = theList.size();
-       // ArrayList<Integer> evenList = new ArrayList<Integer>();
-        ArrayList<Integer> evenList = theList.exterminate(ArrayList<Integer>);
+        OddNumbersExterminator oddNumbers= new OddNumbersExterminator();
+        ArrayList<Integer> oddCheck = new ArrayList<>();
+        oddCheck.add(1);
+        oddCheck.add(2);
+        oddCheck.add(3);
+        oddCheck.add(4);
+        oddCheck.add(5);
+        oddCheck.add(6);
+        oddCheck.add(7);
+        ArrayList<Integer> check = oddNumbers.exterminate(oddCheck);
+        if (check.size()==3) {
+            System.out.println("List is ok");
+        } else {
+            System.out.println("blad");
         }
     }
+}
