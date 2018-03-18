@@ -3,20 +3,21 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 public class ShapeCollector {
+    Shape shape;
+    ArrayList<Shape> figureNames = new ArrayList<>();
 
-    ArrayList<String> figureName = new ArrayList<>();
-
+    public ShapeCollector
     public void addFigure(Shape shape){
-
+        return figureNames.add(shape);
     }
 
-    public void removeFigure(Shape shape){
-
+    public boolean removeFigure(Shape shape){
+        return figureNames.remove(shape);
     }
     public void getFigure(int n){
-
+       return  figureNames.get(n);
     }
-    public void showFigures(){
-
+    public int showFigures(){
+       return figureNames.size();
     }
 }

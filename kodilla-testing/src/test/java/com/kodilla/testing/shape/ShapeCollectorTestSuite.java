@@ -31,7 +31,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(new Triangle());
 
         //Then
-        Assert.assertEquals(1, figureList.size());
+        Assert.assertEquals(1,shapeCollector.showFigures());
 
 
     //sprawdza czy usunieto figure
@@ -42,11 +42,11 @@ public class ShapeCollectorTestSuite {
             ShapeCollector shapeCollector = new ShapeCollector();
 
             //When
-            boolean result = shapeCollector.remove(new Triangle());
+            boolean result = shapeCollector.removeFigure(new Triangle());
 
             //Then
             Assert.assertTrue(result);
-            Assert.assertEquals(0, shapeCollector.size());
+            Assert.assertEquals(0, shapeCollector.showFigures());
         }
     // sprawdza czy pobrano figure z n miejsca
         @Test
@@ -55,7 +55,7 @@ public class ShapeCollectorTestSuite {
             ShapeCollector shapeCollector = new ShapeCollector();
 
             //When
-            boolean result = shapeCollector.get(2);
+            boolean result = shapeCollector.getFigure(2);
 
             //Then
             Assert.assertTrue(result);
