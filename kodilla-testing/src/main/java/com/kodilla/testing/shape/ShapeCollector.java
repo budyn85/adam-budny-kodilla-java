@@ -18,9 +18,6 @@ public class ShapeCollector {
         return figureNames.remove(shape);
     }
     public Shape getFigure(int n){
-         return figureNames.get(0);
-    }
-    public void showFigures(){
-        figureNames.size();
+         return figureNames.get(1);
     }
 }
