@@ -20,7 +20,6 @@ public class ShapeCollectorTestSuite {
             testCounter++;
             System.out.println("Preparing to execute test #" + testCounter);
         }
-    }
     //sprawdza czy dodano figure
     @Test
     public void testAddFigure() {
@@ -29,7 +28,7 @@ public class ShapeCollectorTestSuite {
 
 
         //When
-        shapeCollector.addFigure()( "Triangle");
+        shapeCollector.addFigure(new Triangle());
 
         //Then
         Assert.assertEquals(1, figureList.size());
@@ -38,12 +37,12 @@ public class ShapeCollectorTestSuite {
     //sprawdza czy usunieto figure
 
         @Test
-        public void testRemove() {
+        public void testRemoveFigure() {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
 
             //When
-            boolean result = shapeCollector.remove(0);
+            boolean result = shapeCollector.remove(new Triangle());
 
             //Then
             Assert.assertTrue(result);
