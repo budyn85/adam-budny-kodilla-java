@@ -20,16 +20,13 @@ public class CollectionTestSuite {
     public static void afterClass(){
         System.out.println("Test Suite: end");
     }
+
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         OddNumbersExterminator emptyNumbers= new OddNumbersExterminator();
         ArrayList<Integer> sizeCheck = new ArrayList<Integer>();
         emptyNumbers.exterminate(sizeCheck);
-        if (sizeCheck.size()==0) {
-            System.out.println("List is empty");
-        } else {
-            System.out.println("Error");
-        }
+        Assert.assertEquals(0, sizeCheck.size());
     }
     @Test
     public void testOddNumbersExterminatorNormalList(){
@@ -43,10 +40,7 @@ public class CollectionTestSuite {
         oddCheck.add(6);
         oddCheck.add(7);
         ArrayList<Integer> check = oddNumbers.exterminate(oddCheck);
-        if (check.size()==3) {
-            System.out.println("List is ok");
-        } else {
-            System.out.println("blad");
+        Assert.assertEquals(3, check.size());
         }
     }
-}
+

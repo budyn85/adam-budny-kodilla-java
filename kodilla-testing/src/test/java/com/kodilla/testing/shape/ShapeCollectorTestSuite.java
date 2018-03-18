@@ -31,35 +31,38 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(new Triangle());
 
         //Then
-        Assert.assertEquals(1,shapeCollector.showFigures());
-
+        Assert.assertEquals(1, shapeCollector.getFigureNames().size());
+    }
 
     //sprawdza czy usunieto figure
+    @Test
+    public void testRemoveFigure() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape triangle = new Triangle();
+        shapeCollector.addFigure(triangle);
 
-        @Test
-        public void testRemoveFigure() {
-            //Given
-            ShapeCollector shapeCollector = new ShapeCollector();
+        //When
+        boolean result = shapeCollector.removeFigure(triangle);
 
-            //When
-            boolean result = shapeCollector.removeFigure(new Triangle());
-
-            //Then
-            Assert.assertTrue(result);
-            Assert.assertEquals(0, shapeCollector.showFigures());
-        }
+        //Then
+        Assert.assertTrue(result);
+        Assert.assertEquals(0, shapeCollector.getFigureNames().size());
+    }
     // sprawdza czy pobrano figure z n miejsca
-        @Test
-        public void testGetFigure() {
-            //Given
-            ShapeCollector shapeCollector = new ShapeCollector();
+    @Test
+    public void testGetFigure() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape triangle = new Triangle();
+        Shape circle = new Circle();
+        shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(circle);
 
-            //When
-            boolean result = shapeCollector.getFigure(2);
+        //When
+        Shape shape = shapeCollector.getFigure(1);
 
-            //Then
-            Assert.assertTrue(result);
-            Assert.assertEquals(2, shapeCollector.size());
-
-    // sprawdza czy usunieto figure z n miejsca
+        //Then
+        Assert.assertEquals(circle, shape);
+    }
 }
