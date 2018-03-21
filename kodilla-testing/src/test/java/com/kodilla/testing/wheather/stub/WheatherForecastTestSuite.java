@@ -1,12 +1,9 @@
-package com.kodilla.testing.weather.stub;
+package com.kodilla.testing.wheather.stub;
 
-import com.kodilla.testing.wheather.stub.Temperatures;
-import com.kodilla.testing.wheather.stub.TemperaturesStub;
-import com.kodilla.testing.wheather.stub.WheaterForecast;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class WeatherForecastTestSuite {
+public class WheatherForecastTestSuite {
     @Test
     public void testCalculateForecastWithStub(){
         //Given

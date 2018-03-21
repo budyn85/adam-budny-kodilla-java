@@ -8,17 +8,28 @@ public class StatisticsPresentation {
     private double avgCommentPerUser;
     private double avgCommentPerPost;
 
-    public StatisticsPresentation(Statistics statisticsMock) {
-
-    }
-
     public void calculateAdvStatistics(Statistics statistics) {
         userCount = statistics.usersNames().size();
         postCount = statistics.postsCount();
         commentCount = statistics.commentsCount();
-        avgPostPerUser = postCount / userCount;
-        avgCommentPerUser = commentCount / userCount;
-        avgCommentPerPost = commentCount / postCount;
+        if (userCount>0) {
+            avgPostPerUser = postCount / userCount;
+            avgCommentPerUser = commentCount / userCount;
+        }else{
+            avgPostPerUser= 0;
+            avgCommentPerUser = 0;
+        }
+        if(postCount>0) {
+            avgCommentPerPost = commentCount / postCount;
+        }else {
+            avgCommentPerPost = 0;
+        }
+        if(postCount>commentCount) {
+            avgCommentPerPost = 1;
+        }
+        else{
+            avgCommentPerPost = 0;
+        }
     }
 
     public void showStatistics() {
