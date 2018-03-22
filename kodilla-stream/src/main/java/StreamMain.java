@@ -1,10 +1,12 @@
-import lambda.ExecuteSaySomething;
+
+
+import lambda.Executor;
 import lambda.Processor;
 
 public class StreamMain {
     public static void main(String[] args) {
         Processor processor = new Processor();
-        ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
-        processor.execute(executeSaySomething);
+        Executor codeToExecute = () -> System.out.println("This is an example text.");
+        processor.execute(codeToExecute);
     }
 }
