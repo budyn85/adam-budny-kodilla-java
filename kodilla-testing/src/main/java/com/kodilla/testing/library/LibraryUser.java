@@ -38,8 +38,7 @@ public class LibraryUser {
         if (!(o instanceof LibraryUser)) return false;
         LibraryUser that = (LibraryUser) o;
         if (!firstname.equals(that.firstname)) return false;
-        if (!lastname.equals(that.lastname)) return false;
-        return peselId.equals(that.peselId);
+        return lastname.equals(that.lastname) && peselId.equals(that.peselId);
     }
 
     @Override
