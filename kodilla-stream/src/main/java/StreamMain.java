@@ -1,12 +1,13 @@
 
 
-import lambda.Executor;
-import lambda.Processor;
+import beautifier.PoemBeautifier;
 
 public class StreamMain {
     public static void main(String[] args) {
-        Processor processor = new Processor();
-        Executor codeToExecute = () -> System.out.println("This is an example text.");
-        processor.execute(codeToExecute);
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        String print =poemBeautifier.beautify("ABC ", (text) -> text);
+        String upper =poemBeautifier.beautify("L", (text) -> text);
+        System.out.println(print);
+        System.out.println(upper);
     }
 }
