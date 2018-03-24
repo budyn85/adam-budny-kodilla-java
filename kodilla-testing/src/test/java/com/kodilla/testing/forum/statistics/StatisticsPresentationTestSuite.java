@@ -112,7 +112,7 @@ public class StatisticsPresentationTestSuite {
         statisticsPresentation.showStatistics();
 
         //Then
-        assertEquals(0, statisticsPresentation.getAvgCommentPerPost(), 0);
+        assertEquals(2, statisticsPresentation.getAvgCommentPerPost(), 0);
         assertEquals(2, statisticsPresentation.getAvgCommentPerUser(), 0);
         assertEquals(1, statisticsPresentation.getAvgPostPerUser(), 0);
     }

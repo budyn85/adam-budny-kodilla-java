@@ -18,6 +18,6 @@ import static org.mockito.Mockito.mock;
             int quantityOfSensors = weatherForecast.calculateForecast().size();
 
             //Then
-            Assert.assertEquals(5, quantityOfSensors);
+            Assert.assertEquals(0, quantityOfSensors);
         }
     }

@@ -7,6 +7,6 @@ public class PoemBeautifier{
       return result+ "Lambda is very useful " + result;
     }
     public String beautifyUpper( String text,PoemDecorator poemDecorator){
-        String up =poemDecorator.decorate(text).toUpperCase();
+        String up =poemDecorator.decorate(text);
         return up + "Lambda is very useful";}
 }
