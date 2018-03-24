@@ -1,4 +1,4 @@
-package beautifier;
+package com.kodilla.stream.beautifier;
 
 public class PoemProcessor {
     public String decorateABC (String text){

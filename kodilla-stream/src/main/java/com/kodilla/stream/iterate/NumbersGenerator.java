@@ -1,4 +1,4 @@
-package iterate;
+package com.kodilla.stream.iterate;
 
 import java.util.stream.Stream;
 
