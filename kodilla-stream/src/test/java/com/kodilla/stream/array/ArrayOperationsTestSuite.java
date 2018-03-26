@@ -13,19 +13,29 @@ public class ArrayOperationsTestSuite {
     public void testGetAverage(){
 
         // Given
-        List<Integer> numbers = new ArrayList<>();
+        int[] numbers = new int[20];
 
         // When
-        numbers.add(12);
-        numbers.add(23);
-        numbers.add(18);
-        numbers.add(2);
-        numbers.add(121);
-        numbers.add(452);
-        numbers.add(459);
-        numbers.add(123);
-        numbers.add(857);
-        numbers.add(452);
+        numbers[0]=12;
+        numbers[1]=23;
+        numbers[2]=18;
+        numbers[3]=2;
+        numbers[4]=121;
+        numbers[5]=452;
+        numbers[6]=459;
+        numbers[7]=123;
+        numbers[8]=857;
+        numbers[9]=452;
+        numbers[10]=12;
+        numbers[11]=23;
+        numbers[12]=18;
+        numbers[13]=2;
+        numbers[14]=121;
+        numbers[15]=42;
+        numbers[16]=459;
+        numbers[17]=123;
+        numbers[18]=857;
+        numbers[19]=452;
 
         double functionAverage=ArrayOperations.getAverage(int[] numbers);
 
