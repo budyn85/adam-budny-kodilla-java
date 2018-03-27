@@ -13,37 +13,59 @@ public class WorldTestSuite {
                 Country poland = new Country("Poland", new BigDecimal("38122452"));
                 Country germany = new Country("Germany", new BigDecimal("80348201"));
                 Country france = new Country("France", new BigDecimal("58122452"));
+                Country norway = new Country("Norway",new BigDecimal("5120903"));
+                Country usa = new Country("USA",new BigDecimal("325122452"));
+                Country mexico =new Country("Mexico",new BigDecimal("139122452"));
+                Country canada = new Country("Canada",new BigDecimal("18122452"));
+                Country brasil = new Country("Brasil",new BigDecimal("231000050"));
+                Country argentina = new Country("Argentina",new BigDecimal("8999200"));
+                Country peru = new Country("Peru",new BigDecimal("2122452"));
+                Country china =new Country("China",new BigDecimal("1346850923"));
+                Country japan = new Country("Japan",new BigDecimal("395086212"));
+                Country qatar =new Country("Qatar",new BigDecimal("1122452"));
+                Country marocco =new Country("Marocco",new BigDecimal("21124512"));
+                Country egipt =new Country("Egipt",new BigDecimal("98135992"));
+                Country sudan = new Country("Sudan",new BigDecimal("4122452"));
+                Country australia = new Country("Australia",new BigDecimal("25698321"));
+                Country newZealand = new Country("New Zealand",new BigDecimal("4212459"));
+
                 Continent europe = new Continent("Europe");
                 europe.addCountry(poland);
                 europe.addCountry(germany);
                 europe.addCountry(france);
-                world.addContinent(europe);
+                europe.addCountry(norway);
 
-//        world.addContinent(new Continent(new Country("Poland","38122452"),"Europe"));
-//        world.addContinent(new Continent(new Country("Germany","80348201"),"Europe"));
-//        world.addContinent(new Continent(new Country("France","58122452"),"Europe"));
-//        world.addContinent(new Continent(new Country("Norway","5120903"),"Europe"));
-//        world.addContinent(new Continent(new Country("Poland","38122452"),"Europe"));
-//        world.addContinent(new Continent(new Country("USA","325122452"),"North America"));
-//        world.addContinent(new Continent(new Country("Mexico","139122452"),"North America"));
-//        world.addContinent(new Continent(new Country("Canada","18122452"),"North Amercia"));
-//        world.addContinent(new Continent(new Country("Brasil","231000050"),"South America"));
-//        world.addContinent(new Continent(new Country("Argentina","8999200"),"South America"));
-//        world.addContinent(new Continent(new Country("Peru","2122452"),"South America"));
-//        world.addContinent(new Continent(new Country("China","1346850923"),"Asia"));
-//        world.addContinent(new Continent(new Country("Japan","395086212"),"Asia"));
-//        world.addContinent(new Continent(new Country("Qatar","1122452"),"Asia"));
-//        world.addContinent(new Continent(new Country("Marocco","21124512"),"Africa"));
-//        world.addContinent(new Continent(new Country("Egipt","98135992"),"Africa"));
-//        world.addContinent(new Continent(new Country("Sudan","4122452"),"Africa"));
-//        world.addContinent(new Continent(new Country("Australia","25698321"),"Australia/Oceania"));
-//        world.addContinent(new Continent(new Country("Antarctica","52"),"Antarctica"));
+                Continent asia = new Continent("Asia");
+                asia.addCountry(china);
+                asia.addCountry(japan);
+                asia.addCountry(qatar);
+
+                Continent northAmerica = new Continent("North America");
+                northAmerica.addCountry(usa);
+                northAmerica.addCountry(canada);
+                northAmerica.addCountry(mexico);
+
+                Continent southAmerica = new Continent("South America");
+                southAmerica.addCountry(brasil);
+                southAmerica.addCountry(peru);
+                southAmerica.addCountry(argentina);
+
+                Continent africa = new Continent("Africa");
+                africa.addCountry(marocco);
+                africa.addCountry(egipt);
+                africa.addCountry(sudan);
+
+                Continent australiaAndOceania = new Continent("Australia");
+                australiaAndOceania.addCountry(australia);
+                australiaAndOceania.addCountry(newZealand);
+
                 //When
-                BigDecimal result = world.getPeopleQuantity();
+                BigDecimal result;
+                result = world.getAllPeopleQuantity();
 
 
                 //Then
-                BigDecimal expectedWorldPeopleQuantity = new BigDecimal("2836466434");
+                BigDecimal expectedWorldPeopleQuantity = new BigDecimal("176593105");
                 Assert.assertEquals(expectedWorldPeopleQuantity, result);
         }
 }
