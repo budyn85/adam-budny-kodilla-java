@@ -12,12 +12,11 @@ public class World {
         continents.add(continent);
     }
 
-    @Override
     public BigDecimal getPeopleQuantity() {
         BigDecimal peopleQuantity=continents.stream()
-                .flatMap(continent1 -> continent1.addContinent().stream())
+                .flatMap(continent1 -> continent1.getCountries().stream())
                 .map(Country::getPeopleQuantity)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
-                return PeopleQuantity;
+        return peopleQuantity;
     }
 }

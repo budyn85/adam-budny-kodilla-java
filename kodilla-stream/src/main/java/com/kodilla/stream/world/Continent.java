@@ -15,6 +15,14 @@ public final class Continent {
         countries.add(country);
     }
 
+    public String getContinentName() {
+        return continentName;
+    }
+
+    public Set<Country> getCountries() {
+        return countries;
+    }
+
     @Override
     public String toString() {
         return "Continent{" +

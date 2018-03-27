@@ -3,10 +3,6 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-
 public class ArrayOperationsTestSuite {
 
     @Test
@@ -37,10 +33,10 @@ public class ArrayOperationsTestSuite {
         numbers[18]=857;
         numbers[19]=452;
 
-        double functionAverage=ArrayOperations.getAverage(int[] numbers);
+        double functionAverage=ArrayOperations.getAverage( numbers);
 
         //Then
-        Assert.assertEquals(251.9, functionAverage);
-    }
+        Assert.assertEquals(231.4, functionAverage,0);
     }
 }
+
