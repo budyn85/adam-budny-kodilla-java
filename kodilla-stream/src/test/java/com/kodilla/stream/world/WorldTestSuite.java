@@ -9,7 +9,6 @@ public class WorldTestSuite {
         @Test
         public void testWorld() {
                 //Given
-                World world = new World();
                 Country poland = new Country("Poland", new BigDecimal("38122452"));
                 Country germany = new Country("Germany", new BigDecimal("80348201"));
                 Country france = new Country("France", new BigDecimal("58122452"));
@@ -59,12 +58,20 @@ public class WorldTestSuite {
                 australiaAndOceania.addCountry(australia);
                 australiaAndOceania.addCountry(newZealand);
 
+                World world = new World();
+                world.addContinent(europe);
+                world.addContinent(asia);
+                world.addContinent(africa);
+                world.addContinent(northAmerica);
+                world.addContinent(southAmerica);
+                world.addContinent(australiaAndOceania);
+
                 //When
                 BigDecimal result;
                 result = world.getAllPeopleQuantity();
 
                 //Then
-                BigDecimal expectedWorldPeopleQuantity = new BigDecimal("176593105");
+                BigDecimal expectedWorldPeopleQuantity = new BigDecimal("2802556389");
                 Assert.assertEquals(expectedWorldPeopleQuantity, result);
         }
 }
