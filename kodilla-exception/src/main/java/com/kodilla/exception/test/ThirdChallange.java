@@ -13,7 +13,7 @@ public class ThirdChallange {
         RouteSearch routeSearch = new RouteSearch();
         try {
             routeSearch.findFlight(flight1);
-        }catch (Exception c){
+        }catch (RouteNotFoundException c){
             System.out.println("Sorry. ");
         }
         System.out.println("See our other destinations");
