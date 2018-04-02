@@ -9,11 +9,13 @@ public class ThirdChallange {
         Flight flight5 = new Flight("Krakow", "Warsaw");
         Flight flight6 = new Flight("Krakow", "Wroclaw");
         Flight flight7 = new Flight("Wroclaw", "Bydgoszcz");
+        Flight flight8 = new Flight("Barcelona","Madrid");
 
         RouteSearch routeSearch = new RouteSearch();
         try {
-            routeSearch.findFlight(flight1);
-        }catch (RouteNotFoundException c){
+            boolean result=routeSearch.findFlight(flight8);
+            System.out.println(result);
+        }catch (Exception c){
             System.out.println("Sorry. ");
         }
         System.out.println("See our other destinations");
