@@ -18,13 +18,12 @@ public class RouteSearch {
 
 
         Boolean port = true;
-        for (Map.Entry<String, Boolean> ports : airports.entrySet()) {
-            if (airports.containsKey(flight.getDepartureAirport())) {
-               return port = ports.getValue();
-            } else {
-                throw new RouteNotFoundException("Error");
-            }
+        if (airports.containsKey(flight.getDepartureAirport())) {
+            port= airports.get(flight.getDepartureAirport());
+        } else {
+            throw new RouteNotFoundException("Error");
         }
+
         return port;
     }
 }
