@@ -9,9 +9,9 @@ public class StreamMain {
         MovieStore movieStore = new MovieStore();
         Map<String, List<String>> theResult = movieStore.getMovies();
                 theResult.entrySet().stream()
-                .map(s->s.getValue())
-                .map(List::toString)
-                .collect(Collectors.joining(",!","<<",">>"));
+                .flatMap(e->e.getValue().stream())
+                .map(e->e.substring(e.indexOf(""),e.indexOf("")))
+                .collect(Collectors.joining(",!","l","l"));
 
         System.out.println(theResult);
     }
