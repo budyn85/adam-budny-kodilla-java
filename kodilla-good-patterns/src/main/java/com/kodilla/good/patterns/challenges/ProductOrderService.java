@@ -1,13 +1,13 @@
 package com.kodilla.good.patterns.challenges;
 
 public class ProductOrderService {
-    private MobileInformationService informationService;
-    private MobileOrderService orderService;
-    private MobileOrderRepository orderRepository;
+    private InformationService informationService;
+    private OrderService orderService;
+    private OrderRepository orderRepository;
 
-    public ProductOrderService(final MobileInformationService informationService,
-                               final MobileOrderService orderService,
-                               final MobileOrderRepository orderRepository) {
+    public ProductOrderService(final InformationService informationService,
+                               final OrderService orderService,
+                               final OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;

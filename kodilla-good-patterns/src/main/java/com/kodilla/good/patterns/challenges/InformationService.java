@@ -2,5 +2,7 @@ package com.kodilla.good.patterns.challenges;
 
 public interface InformationService {
 
-    void inform();
+    void inform(User user);
+
+    void informByEmail(User user);
 }

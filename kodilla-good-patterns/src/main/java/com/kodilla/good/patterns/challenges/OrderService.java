@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges;
 
- interface OrderService {
-    boolean order();
+import java.time.LocalDateTime;
+
+interface OrderService {
+    boolean order(final User user,final LocalDateTime ordTime);
 }
