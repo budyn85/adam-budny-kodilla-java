@@ -4,5 +4,4 @@ public class Applicarion {
     OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
     OrderRequest orderRequest = orderRequestRetriever.retrieve();
 
-
         }
