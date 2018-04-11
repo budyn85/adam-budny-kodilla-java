@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public class Applicarion {
+public class Application {
     OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
     OrderRequest orderRequest = orderRequestRetriever.retrieve();
+}
 
-        }
