@@ -1,18 +1,13 @@
-//package com.kodilla.good.patterns.challenges.food2door;
-//
-//public class ExtraFoodShopSupplier implements Supplier {
-//    OrderService orderService;
+package com.kodilla.good.patterns.challenges.food2door;
 
-//    public OrderDto process(final OrderRequest productRequest) {
-//        boolean isOrdered = orderService.order(productRequest.getUser(), productRequest.getTimeRequest());
-//
-//        if (isOrdered) {
-//            orderService.inform(productRequest.getSupplier());
-//            orderRepository.createOrder(productRequest.getSupplier(), productRequest.getTimeRequest());
-//            return new OrderDto(productRequest.getSupplier(), true);
-//        } else {
-//            return new OrderDto(productRequest.getSupplier(), false);
-//        }
-//    }
-//
-//}
+import java.util.Random;
+
+public class ExtraFoodShopSupplier implements Supplier {
+
+
+    @Override
+    public boolean process(Order order) {
+        Random random=new Random();
+        return random.nextBoolean();
+    }
+}

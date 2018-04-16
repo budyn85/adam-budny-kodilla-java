@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class BoardTestSuite {
 
     @Autowired
-    Board board;
+    private Board board;
 
     @Test
     public void testTaskAdd(){
@@ -27,5 +27,5 @@ public class BoardTestSuite {
         Assert.assertEquals(toDoTask,"ToDoTask");
         Assert.assertEquals(inProgressTask,"InProgressTask");
         Assert.assertEquals(doneTask,"DoneTask");
-}
+    }
 }
