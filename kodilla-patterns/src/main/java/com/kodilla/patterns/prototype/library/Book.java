@@ -1,4 +1,4 @@
-package com.kodilla.patterns.library;
+package com.kodilla.patterns.prototype.library;
 
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ public final class Book {
         this.publicationDate = LocalDate.of(year,month,day);
     }
 
-    public String getTitle() {
+    public String getTitle(String f) {
         return title;
     }
 
