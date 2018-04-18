@@ -5,6 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LoggerTestSuite {
+
     @BeforeClass
     public static void logLogger(){
         Logger.getInstance().log("My first log");
