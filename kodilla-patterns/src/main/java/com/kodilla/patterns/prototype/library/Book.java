@@ -14,7 +14,7 @@ public final class Book {
         this.publicationDate = LocalDate.of(year,month,day);
     }
 
-    public String getTitle(String f) {
+    public String getTitle() {
         return title;
     }
 
