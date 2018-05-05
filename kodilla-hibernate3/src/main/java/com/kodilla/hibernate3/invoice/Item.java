@@ -18,12 +18,13 @@ public class Item {
     protected Item() {
     }
 
-    public Item(final Product product, final BigDecimal price, final int quantity, final Invoice invoice) {
-        this.product = product;
+    public Item(final Product product,final BigDecimal price, final int quantity,
+            final BigDecimal value,final Invoice invoice) {
         this.price = price;
         this.quantity = quantity;
         this.value = price.multiply(new BigDecimal(quantity));
-        this.invoice = invoice;
+        this.product=product;
+        this.invoice=invoice;
     }
 
     @Id
@@ -35,7 +36,7 @@ public class Item {
     }
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "PRODUCT")
+    @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
@@ -59,7 +60,7 @@ public class Item {
     }
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "INVOICE")
+    @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
     }

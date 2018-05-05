@@ -3,49 +3,63 @@ package com.kodilla.hibernate3.invoice.dao;
 import com.kodilla.hibernate3.invoice.Invoice;
 import com.kodilla.hibernate3.invoice.Item;
 import com.kodilla.hibernate3.invoice.Product;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
-
-import static org.assertj.core.api.Java6Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class InvoiceDaoTestSuite {
+
     @Autowired
     private InvoiceDao invoiceDao;
-    private final Invoice invoice = new Invoice("FA/12345678");
+    @Autowired
+    private ProductDao productDao;
+    @Autowired
+    private ItemDao itemDao;
 
     @Test
-    public void testInvoiceDaoSave() {
+    public void testSaveManyToMany() {
         //Given
-        prepareTestItemsForInvoice();
+
+        Invoice invoice1 = new Invoice("FA1234");
+        Invoice invoice2 = new Invoice("FA1235");
+        Invoice invoice3 = new Invoice("FA1434");
+        Product product = new Product("Bicycle");
+        Item wheel = new Item(product,new BigDecimal(10), 2, new BigDecimal(2),invoice1);
+        Item seat = new Item(product,new BigDecimal(10), 2, new BigDecimal(2),invoice2);
+        Item brake = new Item(product,new BigDecimal(10), 2, new BigDecimal(2),invoice3);
+        product.getItems().add(wheel);
+        product.getItems().add(seat);
+        product.getItems().add(brake);
+        invoice1.getItems().add(wheel);
+        invoice2.getItems().add(seat);
+        invoice3.getItems().add(brake);
+
         //When
-        invoiceDao.save(invoice);
+        invoiceDao.save(invoice1);
+        invoiceDao.save(invoice2);
+        invoiceDao.save(invoice3);
+        productDao.save(product);
+        itemDao.save(wheel);
+        itemDao.save(seat);
+        itemDao.save(brake);
+
         //Then
-        final int id = invoice.getId();
-        assertThat(invoiceDao.findOne(id))
-                .extracting("number")
-                .containsExactly("FA/12345678");
-        //Clean up
-        invoiceDao.delete(id);
-    }
+        Item item=itemDao.findOne(wheel.getId());
+        Assert.assertEquals(wheel.getValue(),item.getValue());
 
-    private void prepareTestItemsForInvoice() {
-        final Product book = new Product("Book");
-        final Product computer = new Product("Computer");
-        final Product mousePad = new Product("Mouse Pad");
+        //CleanUp
+        itemDao.deleteAll();
+        productDao.deleteAll();
+        invoiceDao.deleteAll();
 
-        final Item itemBook = new Item(book, new BigDecimal(33), 3, invoice);
-        final Item itemComputer = new Item(computer, new BigDecimal(4500), 1, invoice);
-        final Item itemMousePad = new Item(mousePad, new BigDecimal(15), 1, invoice);
-
-        invoice.getItems().add(itemBook);
-        invoice.getItems().add(itemComputer);
-        invoice.getItems().add(itemMousePad);
     }
 }

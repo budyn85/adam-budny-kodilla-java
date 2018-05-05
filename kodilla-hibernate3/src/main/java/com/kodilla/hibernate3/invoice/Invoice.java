@@ -34,8 +34,8 @@ public class Invoice {
     }
 
     @OneToMany(
+            targetEntity = Item.class,
             mappedBy = "invoice",
-            cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     public List<Item> getItems() {
@@ -50,7 +50,7 @@ public class Invoice {
         this.number = number;
     }
 
-    private void setItems(final List<Item> items) {
+    private void setItems(List<Item> items) {
         this.items = items;
     }
 }

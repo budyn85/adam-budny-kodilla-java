@@ -14,6 +14,7 @@ public final class Task {
     private Date created;
     private int duration;
     private TaskList taskList;
+    private TaskFinancialDetails taskFinancialDetails;
 
     public Task() {
     }
@@ -53,7 +54,18 @@ public final class Task {
     public TaskList getTaskList() {
         return taskList;
     }
-    private void setTaskList(TaskList taskList) {
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TASKS_FINANCIALS_ID")
+    public TaskFinancialDetails getTaskFinancialDetails() {
+        return taskFinancialDetails;
+    }
+
+    public void setTaskFinancialDetails(final TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
+    }
+
+    public void setTaskList(TaskList taskList) {
         this.taskList = taskList;
     }
 
