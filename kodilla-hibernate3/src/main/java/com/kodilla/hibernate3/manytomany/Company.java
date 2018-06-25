@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.withFirstOfThreeCharacters",
-        query = "SELECT * FROM COMPANIES WHERE substr(COMPANY_NAME, 1, 3) = :THREE",
+        name = "Company.companyNameLike",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT ('%',:NAME, '%') "),
         resultClass = Company.class
 )
 @Entity

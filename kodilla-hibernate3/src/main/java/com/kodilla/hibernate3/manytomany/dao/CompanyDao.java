@@ -13,6 +13,9 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
+   // @Query(nativeQuery = true)
+   // List<Company> withFirstOfThreeCharacters(@Param("THREE") String three);
+
     @Query(nativeQuery = true)
-    List<Company> withFirstOfThreeCharacters(@Param("THREE") String three);
+    List<Company> companyNameLike(@Param("NAME") String name);
 }

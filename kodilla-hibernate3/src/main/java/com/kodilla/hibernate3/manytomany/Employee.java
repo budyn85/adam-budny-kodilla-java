@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(
-        name = "Employee.findEmployeesWithGivenLastname",
-        query = "FROM Employee WHERE upper(lastname) = upper(:LASTNAME)"
+        name = "Employee.employeeName",
+        query = "FROM Employee WHERE LASTNAME LIKE ('%',LASTNAME,'%'),
+        resultClass = Employee.class
 )
 @Entity
 @Table(name = "EMPLOYEES")
