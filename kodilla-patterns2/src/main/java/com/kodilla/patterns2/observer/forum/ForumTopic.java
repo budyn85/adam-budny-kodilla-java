@@ -16,7 +16,7 @@ public class ForumTopic implements Observable{
 
     public void addPost(String post) {
         messages.add(post);
-        notifyObserver();
+        notifyObservers();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ForumTopic implements Observable{
     }
 
     @Override
-    public void notifyObserver() {
+    public void notifyObservers() {
         for (Observer observer : observers) {
             observer.update(this);
         }
