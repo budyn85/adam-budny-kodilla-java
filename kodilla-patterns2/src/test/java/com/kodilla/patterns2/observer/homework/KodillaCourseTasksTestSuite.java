@@ -34,8 +34,8 @@ public class KodillaCourseTasksTestSuite {
 
         //Then
         Assert.assertEquals(3, restApiTasksParticipantsList);
-        Assert.assertEquals(1, springTasksParticipantsList);
-        Assert.assertEquals(2, facadeTasksParticipantsList);
+        Assert.assertEquals(2, springTasksParticipantsList);
+        Assert.assertEquals(3, facadeTasksParticipantsList);
     }
 
     @Test
@@ -75,8 +75,8 @@ public class KodillaCourseTasksTestSuite {
         int mentor2KodillaTasks = mentor2.getUpdateCount();
 
         //Then
-        Assert.assertEquals(4, mentor1KodillaTasks);
-        Assert.assertEquals(5, mentor2KodillaTasks);
+        Assert.assertEquals(5, mentor1KodillaTasks);
+        Assert.assertEquals(6, mentor2KodillaTasks);
     }
 }
 
