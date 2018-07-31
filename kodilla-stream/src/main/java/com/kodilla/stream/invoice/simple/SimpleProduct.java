@@ -25,4 +25,8 @@ public final class SimpleProduct {
         SimpleProduct that = (SimpleProduct) o;
         return productName.equals(that.productName);
     }
+    @Override
+    public int hashCode() {
+        return productName.hashCode();
+    }
 }
